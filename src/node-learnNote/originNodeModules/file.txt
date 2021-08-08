@@ -1,0 +1,7 @@
+######################### START ########################################
+### 这是一个文本文件，用来测试nodejs中的fs系统文件模块的
+The synchronous form blocks the Node.js event 
+loop and further JavaScript execution until the operation is complete. 
+Exceptions are thrown immediately and can be handled using try…catch,
+ or can be allowed to bubble up.
+######################### END ###########################################
