@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script src="http://jakequc.chat.com:3000/socket.io/socket.io.js"></script>
+		<title>多人聊天室</title>
+	</head>
+	<body>
+		<div id="loginBox">
+			<div style="width: 260px; margin: 200px auto">
+				请输入你在聊天室的昵称
+				<br />
+				<br />
+				<input
+					type="text"
+					style="width: 180px"
+					placeholder="请输入用户名称"
+					id="userName"
+					name="userName"
+				/>
+				<input
+					type="button"
+					style="width: 50px"
+					value="提交"
+					onclick="
+    CHAT.usernameSubmit();"
+				/>
+			</div>
+		</div>
+
+		<!-- chatBox -->
+		<div id="chatBox" style="display: none">
+			<div
+				style="background: #3d3d3d; height: 28px; width: 100%; font-size: 12px"
+			>
+				<div style="line-height: 28px; color: #fff">
+					<span style="text-align: left; margin-right: 10px"
+						>WebSocket多人聊天室</span
+					>
+					<span style="float: right; margin-right: 10px"
+						><span id="showUserName"></span>|<a
+							href="javascript:;"
+							onclick="CHAT.logout()"
+							style="color: #fff"
+							>退出</a
+						></span
+					>
+				</div>
+			</div>
+
+			<!-- doc -->
+			<div id="doc">
+				<div id="chat">
+					<div id="message" class="message">
+						<div
+							id="onlinecount"
+							style="
+								background: #efeff4;
+								font-size: 12px;
+								margin-top: 10px;
+								margin-left: 10px;
+								color: #666;
+							"
+						></div>
+					</div>
+				</div>
+				<div class="input-box">
+					<div class="input">
+						<input
+							type="text"
+							maxlength="140"
+							placeholder="请输入聊天内容，ctrl提交"
+							id="content"
+							name="content"
+						/>
+					</div>
+					<div class="action">
+						<button id="mjr_send" type="button" onclick="CHAT.submit()">
+							提交
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./client.js"></script>
+	</body>
+</html>
